@@ -1,9 +1,20 @@
 import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+export const dynamic = 'force-dynamic';
 
 export async function POST(req: Request) {
+  const resendApiKey = process.env.RESEND_API_KEY;
+  const companyEmail = process.env.COMPANY_EMAIL;
+
+  if (!resendApiKey || !companyEmail) {
+    return NextResponse.json(
+      { success: false, error: 'Email service is not configured.' },
+      { status: 500 }
+    );
+  }
+
+  const { Resend } = await import('resend');
+  const resend = new Resend(resendApiKey);
   const body = await req.json();
 
   const {
@@ -21,7 +32,7 @@ export async function POST(req: Request) {
   try {
     const data = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>',
-      to: process.env.COMPANY_EMAIL ?? '',
+      to: companyEmail,
       subject: `New Portfolio Submission from ${firstName} ${lastName}`,
       html: `
         <h3>New Contact Request</h3>
