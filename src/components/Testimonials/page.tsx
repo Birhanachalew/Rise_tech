@@ -19,70 +19,70 @@ import {
 function Testimonials() {
   const testimonials = [
     {
-      name: "Michael Chen",
-      company: "Digital Ventures",
-      role: "CTO",
+      name: "Liya Mengistu",
+      company: "Green Africa Farm",
+      role: "Operations Director",
       content:
-        "Working with App It Up was a game-changer for our startup. They built a scalable platform that grew with our business needs. The code quality and architecture decisions they made early on saved us months of refactoring later.",
+        "RISE TECH delivered a fast, modern website that tells our story clearly and performs beautifully across devices.",
       rating: 5,
-      project: "SaaS Platform",
-      avatar: "MC",
+      project: "Green Africa Farm",
+      avatar: "LM",
+      industry: "Agriculture",
+    },
+    {
+      name: "Samuel Tesfaye",
+      company: "Robin Trade Premium",
+      role: "Founder",
+      content:
+        "The platform feels premium and trustworthy, and the delivery was on time with excellent attention to detail.",
+      rating: 5,
+      project: "Robin Trade Premium",
+      avatar: "ST",
       industry: "FinTech",
     },
     {
-      name: "Emily Rodriguez",
-      company: "InnovateCorp",
+      name: "Rahel Bekele",
+      company: "Fortunate Soccer Academy",
+      role: "Director",
+      content:
+        "Our academy site now feels professional and easy to navigate, helping parents find programs quickly.",
+      rating: 5,
+      project: "Fortunate Soccer Academy",
+      avatar: "RB",
+      industry: "Sports",
+    },
+    {
+      name: "Marco Bianchi",
+      company: "Log Interior",
+      role: "Creative Lead",
+      content:
+        "They translated our portfolio into a clean, elegant web experience that highlights our work perfectly.",
+      rating: 5,
+      project: "Log Interior",
+      avatar: "MB",
+      industry: "Interior Design",
+    },
+    {
+      name: "Hana Dereje",
+      company: "Yenegym",
       role: "Product Manager",
       content:
-        "The team's versatility across different tech stacks allowed us to build exactly what we envisioned. They understood our requirements perfectly and delivered beyond expectations.",
+        "The login flow is smooth and reliable, and the site performs well even during peak traffic.",
       rating: 5,
-      project: "E-Commerce Platform",
-      avatar: "ER",
-      industry: "Retail",
+      project: "Yenegym",
+      avatar: "HD",
+      industry: "Fitness",
     },
     {
-      name: "David Kim",
-      company: "HealthTech Solutions",
-      role: "Founder",
+      name: "Andrea Rossi",
+      company: "Wib Fashion",
+      role: "Co-Founder",
       content:
-        "App It Up delivered our mobile health app on time and within budget. Their expertise in healthcare compliance and security was invaluable. The app has been downloaded over 100K times!",
+        "They helped us launch a polished brand presence and drive mobile engagement with a seamless experience.",
       rating: 5,
-      project: "Mobile Health App",
-      avatar: "DK",
-      industry: "Healthcare",
-    },
-    {
-      name: "Lisa Thompson",
-      company: "EduLearn",
-      role: "VP of Technology",
-      content:
-        "The educational platform they built for us handles thousands of concurrent users seamlessly. Their performance optimization and scalability planning were spot-on.",
-      rating: 5,
-      project: "Learning Management System",
-      avatar: "LT",
-      industry: "Education",
-    },
-    {
-      name: "James Wilson",
-      company: "GreenEnergy Co",
-      role: "Operations Director",
-      content:
-        "Our IoT dashboard for monitoring solar installations works flawlessly. App It Up's expertise in real-time data processing and visualization exceeded our expectations.",
-      rating: 5,
-      project: "IoT Dashboard",
-      avatar: "JW",
-      industry: "Clean Energy",
-    },
-    {
-      name: "Maria Garcia",
-      company: "FoodieDelight",
-      role: "CEO",
-      content:
-        "The food delivery app they created for us has revolutionized our business. The user experience is intuitive, and the backend systems handle our peak hours without any issues.",
-      rating: 5,
-      project: "Food Delivery App",
-      avatar: "MG",
-      industry: "Food & Beverage",
+      project: "Wib Fashion",
+      avatar: "AR",
+      industry: "Fashion",
     },
   ];
   return (
@@ -146,17 +146,19 @@ function Testimonials() {
                     </svg>
                   </div>
                   <blockquote className="text-xl lg:text-2xl text-white mb-6 italic leading-relaxed">
-                    "App It Up transformed our entire digital presence. Their team didn't just build us an app – they
-                    built us a competitive advantage. The attention to detail, technical expertise, and ongoing support
-                    have been exceptional."
+                    "RISE TECH delivered a reliable, high-performance platform that strengthened our brand and improved
+                    customer engagement across web and mobile."
                   </blockquote>
                   <div className="flex items-center justify-center gap-4">
                     <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                      SJ
+                      YW
                     </div>
                     <div className="text-left">
-                      <div className="text-white font-semibold text-lg">Sarah Johnson</div>
-                      <div className="text-purple-300">CEO, TechStart Inc.</div>
+                      <div className="text-white font-semibold text-lg">Yonas Weldehana</div>
+                      <div className="text-purple-300">
+                        Entrepreneur | Software Engineer | Co-Founder at Rise
+                        Tech and Central Machinery
+                      </div>
                       <div className="flex items-center gap-1 mt-1">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />

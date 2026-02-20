@@ -5,6 +5,7 @@ import Projects from "@/components/Projects/page"
 import Testimonials from "@/components/Testimonials/page"
 import ContactUs from "@/components/ContactUs/page"
 import HeroSection from "@/components/HeroSection/page"
+import About from "@/components/About/page"
 import Footer from "@/components/Footer/page"
 import Navbar from "@/components/Navbar/page"
 
@@ -17,6 +18,9 @@ export default function Portfolio() {
       <Navbar />
       {/* Hero Section */}
       <HeroSection />
+
+      {/* About Section */}
+      <About />
       
 
       {/* Services Section */}

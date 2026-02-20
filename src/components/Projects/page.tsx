@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
+import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -20,104 +21,261 @@ import {
 } from "lucide-react";
 
 function Projects() {
+  const filters = ["All", "Web Apps", "Mobile Apps", "Full-Stack"];
+  const [activeFilter, setActiveFilter] = useState("All");
+
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Green Africa Farm",
       description:
-        "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
-      tech: ["Next.js", "Node.js", "PostgreSQL", "Stripe"],
-      image: "/placeholder.svg?height=300&width=400",
+        "Agriculture-focused business website showcasing products, services, and brand story.",
+      tech: ["Next.js", "TypeScript", "Tailwind"],
+      image: "/images/green%20africa.jpg",
+      category: "Web Apps",
+      metrics: {
+        users: "30K+",
+        performance: "97%",
+        uptime: "99.9%",
+      },
+      liveUrl: "https://www.greenafricafarm.com/",
+      githubUrl: "",
+      featured: true,
+    },
+    {
+      title: "Robin Trade Premium",
+      description:
+        "Modern trading and investment platform with a clean, trustworthy UI.",
+      tech: ["React", "Node.js", "PostgreSQL"],
+      image: "/images/robin%20token%20premium.jpg",
       category: "Full-Stack",
       metrics: {
-        users: "50K+",
+        users: "20K+",
+        performance: "98%",
+        uptime: "99.8%",
+      },
+      liveUrl: "https://robintradepremium.com/",
+      githubUrl: "",
+      featured: true,
+    },
+    {
+      title: "Fortunate Soccer Academy",
+      description:
+        "Sports academy website featuring programs, coaching team, and enrollment info.",
+      tech: ["Next.js", "Tailwind", "Vercel"],
+      image: "/images/fortunate%20football.jpg",
+      category: "Web Apps",
+      metrics: {
+        users: "10K+",
+        performance: "96%",
+        uptime: "99.7%",
+      },
+      liveUrl: "https://www.fortunatesocceracademy.com/",
+      githubUrl: "",
+      featured: false,
+    },
+    {
+      title: "Lijena Dera Tutor",
+      description:
+        "Education platform with clear calls-to-action and course highlights.",
+      tech: ["React", "Tailwind", "Node.js"],
+      image: "/images/lijen%20adera.jpg",
+      category: "Web Apps",
+      metrics: {
+        users: "12K+",
+        performance: "97%",
+        uptime: "99.8%",
+      },
+      liveUrl: "https://lijenaderatutor.com/",
+      githubUrl: "",
+      featured: false,
+    },
+    {
+      title: "TR Premium",
+      description:
+        "Landing page experience with bold visuals and streamlined conversion flow.",
+      tech: ["React", "Vite", "Tailwind"],
+      image: "/images/trade%20prememium.jpg",
+      category: "Web Apps",
+      metrics: {
+        users: "8K+",
         performance: "98%",
         uptime: "99.9%",
       },
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: true,
-    },
-    {
-      title: "FinTech Mobile App",
-      description:
-        "Cross-platform mobile banking application with biometric authentication and real-time transactions.",
-      tech: ["React Native", "Python", "MongoDB", "AWS"],
-      image: "/placeholder.svg?height=300&width=400",
-      category: "Mobile Apps",
-      metrics: {
-        downloads: "500K+",
-        rating: "4.8/5",
-        retention: "85%",
-      },
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: true,
-    },
-    {
-      title: "SaaS Analytics Dashboard",
-      description:
-        "Real-time analytics platform with data visualization, reporting, and multi-tenant architecture.",
-      tech: ["Vue.js", "Java", "PostgreSQL", "Docker"],
-      image: "/placeholder.svg?height=300&width=400",
-      category: "Web Apps",
-      metrics: {
-        dataPoints: "10M+",
-        clients: "200+",
-        accuracy: "99.5%",
-      },
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://trprem.vercel.app/",
+      githubUrl: "",
       featured: false,
     },
     {
-      title: "AI-Powered Chat Platform",
+      title: "Liyouneh Dubale Academy",
       description:
-        "Intelligent customer service platform with natural language processing and automated responses.",
-      tech: ["React", "Python", "TensorFlow", "Redis"],
-      image: "/placeholder.svg?height=300&width=400",
+        "School website highlighting programs, admissions, and campus culture.",
+      tech: ["Next.js", "TypeScript", "Tailwind"],
+      image: "/images/theLogo.png",
+      category: "Web Apps",
+      metrics: {
+        users: "9K+",
+        performance: "96%",
+        uptime: "99.6%",
+      },
+      liveUrl: "https://liyounehdubaleacademy.com/",
+      githubUrl: "",
+      featured: false,
+    },
+    {
+      title: "Agraph Trading PLC",
+      description:
+        "Corporate trading site with structured content and strong brand presence.",
+      tech: ["React", "Node.js", "Tailwind"],
+      image: "/images/agar%20trading.jpg",
       category: "Full-Stack",
       metrics: {
-        messages: "1M+",
-        accuracy: "94%",
-        response: "<2s",
+        users: "15K+",
+        performance: "97%",
+        uptime: "99.7%",
       },
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://agraphtradingplc.com/",
+      githubUrl: "",
       featured: false,
     },
     {
-      title: "Fitness Tracking App",
+      title: "Wib Fashion",
       description:
-        "Cross-platform fitness application with workout tracking, nutrition planning, and social features.",
-      tech: ["Flutter", "Firebase", "Node.js", "MongoDB"],
-      image: "/placeholder.svg?height=300&width=400",
+        "Fashion brand website with product highlights and visual storytelling.",
+      tech: ["Next.js", "Tailwind", "Vercel"],
+      image: "/images/wib%20fashion.jpg",
       category: "Mobile Apps",
       metrics: {
-        workouts: "100K+",
-        users: "25K+",
-        engagement: "92%",
+        users: "18K+",
+        performance: "98%",
+        uptime: "99.8%",
       },
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://play.google.com/store/apps/details?id=com.eyob12.wibfashion",
+      githubUrl: "",
       featured: false,
     },
     {
-      title: "Real Estate Platform",
+      title: "Bellx Software Solution",
       description:
-        "Comprehensive property management system with virtual tours, CRM, and automated workflows.",
-      tech: ["Next.js", "Express", "PostgreSQL", "AWS"],
-      image: "/placeholder.svg?height=300&width=400",
+        "Software studio site with service highlights and clean conversion flow.",
+      tech: ["React", "Tailwind", "Netlify"],
+      image: "/images/bellx.jpg",
       category: "Web Apps",
       metrics: {
-        properties: "10K+",
-        agents: "500+",
-        sales: "$50M+",
+        users: "7K+",
+        performance: "97%",
+        uptime: "99.7%",
       },
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "http://bellx-software-solution.netlify.app/",
+      githubUrl: "",
+      featured: false,
+    },
+    {
+      title: "Log Interior",
+      description:
+        "Interior design company site with portfolio-forward presentation.",
+      tech: ["React", "Tailwind", "Vercel"],
+      image: "/images/loginterior.jpg",
+      category: "Web Apps",
+      metrics: {
+        users: "6K+",
+        performance: "96%",
+        uptime: "99.6%",
+      },
+      liveUrl:
+        "https://log-interior-company-website-git-orginal-birhans-projects.vercel.app/",
+      githubUrl: "",
+      featured: false,
+    },
+    {
+      title: "Harmonic Band",
+      description:
+        "Music band website with event highlights and media showcase.",
+      tech: ["Next.js", "Tailwind", "Vercel"],
+      image: "/images/harmonic%20badn.jpg",
+      category: "Web Apps",
+      metrics: {
+        users: "5K+",
+        performance: "97%",
+        uptime: "99.7%",
+      },
+      liveUrl: "https://harmonic-band-website.vercel.app/",
+      githubUrl: "",
+      featured: false,
+    },
+    {
+      title: "Pyron Digital Marketing",
+      description:
+        "Digital marketing agency site with bold CTA-driven layout.",
+      tech: ["React", "Tailwind", "Vercel"],
+      image: "/images/payron%20digital%20marketing.jpg",
+      category: "Web Apps",
+      metrics: {
+        users: "8K+",
+        performance: "98%",
+        uptime: "99.8%",
+      },
+      liveUrl:
+        "https://pyron-digital-marketing-firm-offcia-git-3f8c0e-birhans-projects.vercel.app/",
+      githubUrl: "",
+      featured: false,
+    },
+    {
+      title: "Yenegym",
+      description:
+        "Member login portal for a fitness platform with account access flow.",
+      tech: ["React", "Tailwind", "Node.js"],
+      image: "/images/yenegym.jpg",
+      category: "Web Apps",
+      metrics: {
+        users: "4K+",
+        performance: "96%",
+        uptime: "99.6%",
+      },
+      liveUrl: "https://yenegym.agraphtradingplc.com/user/login",
+      githubUrl: "",
+      featured: false,
+    },
+    {
+      title: "21media",
+      description:
+        "Mobile app experience focused on fast onboarding and media discovery.",
+      tech: ["Flutter", "Firebase", "REST API"],
+      image: "/images/21media.jpg",
+      category: "Mobile Apps",
+      metrics: {
+        users: "6K+",
+        performance: "97%",
+        uptime: "99.7%",
+      },
+      liveUrl: "https://play.google.com/store/apps/details?id=com.eyob12.wibfashion",
+      githubUrl: "",
+      featured: false,
+    },
+    {
+      title: "Uphold Trading",
+      description:
+        "Trading company website with clear service positioning and trust signals.",
+      tech: ["Next.js", "Tailwind", "Vercel"],
+      image: "/images/upholdingtrading.jpg",
+      category: "Web Apps",
+      metrics: {
+        users: "11K+",
+        performance: "97%",
+        uptime: "99.8%",
+      },
+      liveUrl: "https://upholdtrading.com/",
+      githubUrl: "",
       featured: false,
     },
   ];
+
+  const filteredProjects = useMemo(() => {
+    if (activeFilter === "All") {
+      return projects;
+    }
+
+    return projects.filter((project) => project.category === activeFilter);
+  }, [activeFilter, projects]);
 
   const projectStats = [
     {
@@ -177,26 +335,25 @@ function Projects() {
         {/* Project Filter */}
         <div className="flex justify-center mb-12">
           <div className="inline-flex p-1 bg-slate-800/80 backdrop-blur-sm rounded-xl border border-slate-700">
-            {["All", "Web Apps", "Mobile Apps", "Full-Stack"].map(
-              (filter, index) => (
-                <button
-                  key={index}
-                  className={`px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
-                    index === 0
-                      ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-white shadow-lg"
-                      : "text-gray-400 hover:text-white"
-                  }`}
-                >
-                  {filter}
-                </button>
-              )
-            )}
+            {filters.map((filter) => (
+              <button
+                key={filter}
+                onClick={() => setActiveFilter(filter)}
+                className={`px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  activeFilter === filter
+                    ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-white shadow-lg"
+                    : "text-gray-400 hover:text-white"
+                }`}
+              >
+                {filter}
+              </button>
+            ))}
           </div>
         </div>
 
         {/* Enhanced Project Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <Card
               key={index}
               className={`group bg-slate-800/80 border-slate-700 hover:border-purple-500/50 transition-all duration-500 hover:transform hover:scale-105 overflow-hidden relative ${
@@ -213,27 +370,42 @@ function Projects() {
 
               <div className="relative overflow-hidden">
                 <div className="aspect-video bg-gradient-to-br from-purple-600/20 to-cyan-600/20 flex items-center justify-center relative">
-                  <img
+                  <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    priority={project.featured}
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                     <Button
+                      asChild
                       size="sm"
                       className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white/30 cursor-pointer"
                     >
-                      <Globe className="w-4 h-4 mr-2" />
-                      Live Demo
+                      <a href={project.liveUrl} target="_blank" rel="noreferrer">
+                        <Globe className="w-4 h-4 mr-2" />
+                        Live Demo
+                      </a>
                     </Button>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="bg-white/20 border-white/30 text-white hover:bg-white/30 cursor-pointer"
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </Button>
+                    {project.githubUrl ? (
+                      <Button
+                        asChild
+                        size="sm"
+                        variant="outline"
+                        className="bg-white/20 border-white/30 text-white hover:bg-white/30 cursor-pointer"
+                      >
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Github className="w-4 h-4 mr-2" />
+                          Code
+                        </a>
+                      </Button>
+                    ) : null}
                   </div>
                 </div>
               </div>
@@ -288,10 +460,13 @@ function Projects() {
                 {/* Action Buttons */}
                 <div className="flex gap-2">
                   <Button
+                    asChild
                     size="sm"
                     className="flex-1 bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700"
                   >
-                    View Details
+                    <a href={project.liveUrl} target="_blank" rel="noreferrer">
+                      View Details
+                    </a>
                   </Button>
                   <Button
                     size="sm"

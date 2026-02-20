@@ -62,7 +62,7 @@ function HeroSection() {
 
             <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent animate-gradient">
-                App It Up
+                RISE TECH
               </span>
               <br />
               <span className="text-3xl lg:text-4xl text-gray-300 font-normal">
@@ -139,14 +139,14 @@ function HeroSection() {
                   <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                   <div className="ml-4 text-gray-400 text-sm">
-                    app-it-up.tsx
+                    rise-tech.tsx
                   </div>
                 </div>
 
                 {/* Code Content */}
                 <div className="p-6 font-mono text-sm">
                   <div className="text-purple-400">
-                    const <span className="text-cyan-400">AppItUp</span> = ()
+                    const <span className="text-cyan-400">RISE TECH</span> = ()
                     =&gt; {"{"}
                   </div>
                   <div className="ml-4 text-gray-300">return (</div>
@@ -177,6 +177,30 @@ function HeroSection() {
                 style={{ animationDelay: "0.5s" }}
               >
                 Node
+              </div>
+              <div
+                className="absolute top-6 left-16 w-12 h-12 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center text-white font-bold animate-bounce"
+                style={{ animationDelay: "0.8s" }}
+              >
+                Java
+              </div>
+              <div
+                className="absolute top-32 right-4 w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-lg flex items-center justify-center text-white font-bold animate-bounce"
+                style={{ animationDelay: "1.1s" }}
+              >
+                Go
+              </div>
+              <div
+                className="absolute -bottom-2 left-4 w-16 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center text-white text-xs font-bold animate-bounce"
+                style={{ animationDelay: "1.4s" }}
+              >
+                Python
+              </div>
+              <div
+                className="absolute -bottom-6 -left-10 w-12 h-12 bg-gradient-to-r from-sky-500 to-indigo-600 rounded-lg flex items-center justify-center text-white font-bold animate-bounce"
+                style={{ animationDelay: "1.7s" }}
+              >
+                Flutter
               </div>
               <div
                 className="absolute -bottom-4 right-8 w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold animate-bounce"

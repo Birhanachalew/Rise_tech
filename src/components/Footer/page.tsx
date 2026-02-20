@@ -62,7 +62,7 @@ function Footer() {
                 </div>
                 <div className="text-2xl lg:text-3xl font-bold">
                   <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                    App It Up
+                    Rise Tech
                   </span>
                 </div>
               </div>
@@ -184,18 +184,20 @@ function Footer() {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-gray-400 hover:text-white transition-colors">
                   <Mail className="w-5 h-5 text-purple-400 mt-0.5" />
-                  <span>appitup70@gmail.com</span>
+                  <span>risetech@gmail.com</span>
                 </li>
                 <li className="flex items-start gap-3 text-gray-400 hover:text-white transition-colors">
                   <Phone className="w-5 h-5 text-cyan-400 mt-0.5" />
-                  <span>+125197608030</span>
+                  <span>+251961737319</span>
+                </li>
+                <li className="flex items-start gap-3 text-gray-400 hover:text-white transition-colors">
+                  <Phone className="w-5 h-5 text-cyan-400 mt-0.5" />
+                  <span>+251 92 350 2678</span>
                 </li>
                 <li className="flex items-start gap-3 text-gray-400 hover:text-white transition-colors">
                   <MapPin className="w-5 h-5 text-pink-400 mt-0.5" />
                   <span>
-                    Remote & Global
-                    <br />
-                    Available Worldwide
+                    Ethiopia, UAE (Dubai), Remote Global
                   </span>
                 </li>
                 <li className="flex items-start gap-3 text-gray-400 hover:text-white transition-colors">
@@ -256,7 +258,7 @@ function Footer() {
           {/* Footer Bottom - Copyright and Legal */}
           <div className="border-t border-slate-700/50 pt-8 flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-500 text-sm mb-4 md:mb-0 text-center md:text-left">
-              © 2024 App It Up. All rights reserved. Crafted with <Heart className="w-4 h-4 inline text-red-500" /> by
+              © 2024 Rise Tech. All rights reserved. Crafted with <Heart className="w-4 h-4 inline text-red-500" /> by
               our team.
             </div>
             <div className="flex flex-wrap gap-6 justify-center">

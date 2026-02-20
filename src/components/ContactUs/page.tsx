@@ -24,6 +24,7 @@ import {
   Instagram,
   Calendar,
   MessageCircle,
+  Users,
 } from "lucide-react";
 
 enum WantedTakes {
@@ -31,6 +32,8 @@ enum WantedTakes {
   MobileApp = "Mobile App",
   FullStack = "Full Stack",
   Consulting = "Consulting",
+  ApplyForJob = "Apply for Job",
+  JoinTeam = "Join Team",
 }
 
 type TechOption = {
@@ -138,6 +141,8 @@ function ContactUs() {
     { icon: <Smartphone className="w-4 h-4" />, label: WantedTakes.MobileApp },
     { icon: <Code2 className="w-4 h-4" />, label: WantedTakes.FullStack },
     { icon: <Zap className="w-4 h-4" />, label: WantedTakes.Consulting },
+    { icon: <Users className="w-4 h-4" />, label: WantedTakes.ApplyForJob },
+    { icon: <MessageCircle className="w-4 h-4" />, label: WantedTakes.JoinTeam },
   ];
   const handleSelectTech = (selected: WantedTakes, index: number) => {
     setActiveTech(index);
@@ -382,7 +387,7 @@ function ContactUs() {
                     </div>
                     <div>
                       <div className="text-white font-medium">Email</div>
-                      <div className="text-sm">appitup70@gmail.com</div>
+                      <div className="text-sm">risetech@gmail.com</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
@@ -391,7 +396,7 @@ function ContactUs() {
                     </div>
                     <div>
                       <div className="text-white font-medium">Phone</div>
-                      <div className="text-sm">+251976088030</div>
+                      <div className="text-sm">+251 92 350 2678</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
@@ -400,7 +405,9 @@ function ContactUs() {
                     </div>
                     <div>
                       <div className="text-white font-medium">Location</div>
-                      <div className="text-sm">Remote & Global</div>
+                      <div className="text-sm">
+                        Ethiopia, UAE (Dubai), Remote Global
+                      </div>
                     </div>
                   </div>
                 </div>
