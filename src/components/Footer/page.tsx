@@ -32,10 +32,10 @@ function Footer() {
   //         <div className="flex flex-col md:flex-row justify-between items-center">
   //           <div className="text-white font-bold text-xl mb-4 md:mb-0">
   //             <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-  //               App It Up
+  //               Rise Tech
   //             </span>
   //           </div>
-  //           <div className="text-gray-400 text-sm">© 2024 App It Up. All rights reserved.</div>
+  //           <div className="text-gray-400 text-sm">© 2024 Rise Tech. All rights reserved.</div>
   //         </div>
   //       </div>
   //     </footer>
